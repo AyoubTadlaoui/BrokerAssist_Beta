@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-
+//This is the basic file, it should be updated to be more secured.
 // Retrieve email credentials from environment variables
 const transporter = nodemailer.createTransport({
   host: 'smtp.example.com',
