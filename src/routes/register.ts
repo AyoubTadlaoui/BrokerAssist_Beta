@@ -2,7 +2,7 @@
 
 import { Request } from 'express';
 import { db } from '$lib/pocketbase'; // Adjust as per your setup
-import { sendVerificationEmail } from '$lib/email'; // Your email sending function
+import { sendVerificationEmail } from 'email'; // Your email sending function
 
 export async function post(req: Request) {
   const { email, password } = req.body;
