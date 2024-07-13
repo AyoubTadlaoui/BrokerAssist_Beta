@@ -4,7 +4,7 @@ import { sendEmail } from './emailService'; // Adjust as per your email service 
 
 export async function sendVerificationEmail(email: string, token: string) {
   const APP_NAME = 'BrokerAssist';  
-  const APP_URL = 'https://brokerassist.com/lander';
+  const APP_URL = 'https://brokerassist.com';
 
   const subject = `Verify your ${APP_NAME} email`;
   const actionUrl = `${APP_URL}/_#/verify/${token}`;
