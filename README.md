@@ -37,39 +37,41 @@ You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
 
-
-// Architecture 
+// Architecture
 BrokerAssist/
-├── .svelte-kit 
-│    ├─ generated/
-│    │  └──client/
-│    │  └── server/
-│    │  └── root.svelte
-│    └── types/
-│    └── ambient.d.ts
-│    └── non-ambient.d.ts
-│    └── tsconfig.json
-├── node_modules     
+├── .svelte-kit
+│ ├─ generated/
+│ │ └── client/
+│ │ └── server/
+│ │ └── root.svelte
+│ └── types/
+│ └── ambient.d.ts
+│ └── non-ambient.d.ts
+│ └── tsconfig.json
+├── node_modules  
 │
 ├── src/
-│   ├── lib/
-│   │   └── stores/
-│   │       └── authStore.ts
-│   ├── routes/
-│   │   ├── +layout.svelte
-│   │   ├── +page.svelte
-│   │   ├── dashboard/
-│   │   │   └── +page.svelte
-│   │   └── verify/
-│   │       └── [token]/
-│   │           └── +page.svelte
-│   ├── app.html
+│ ├── lib/
+│ │ └── stores/
+│ │ └── authStore.ts
+│ ├── email.ts <-- Your email handling logic
+│ ├── emailService.ts <-- Email sending service
+│ ├── routes/
+│ │ ├── +layout.svelte
+│ │ ├── +page.svelte
+│ │ ├── dashboard/
+│ │ │ └── +page.svelte
+│ │ └── verify/
+│ │ └── [token]/
+│ │ └── +page.svelte
+│ ├── app.html
 ├── svelte.config.js
 ├── package.json
 ├── tsconfig.json
 ├── vite.config.js
 ├── static/
-│    └── favicon.png
+│ └── favicon.png
 ├── .npmrc
 ├── .gitignore
-└── package-lock.json
+├── package-lock.json
+└── .env <-- Your environment variables file
