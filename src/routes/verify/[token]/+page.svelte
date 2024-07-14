@@ -1,17 +1,6 @@
 <script context="module" lang="ts">
   import type { PageLoad } from "./$types";
   import { pb } from "$lib/stores/authStore";
-
-  export const load: PageLoad = async ({ params }) => {
-    const token: string = params.token;
-
-    try {
-      await pb.collection("users").confirmVerification(token);
-      return { success: true };
-    } catch (error) {
-      return { success: false, error };
-    }
-  };
 </script>
 
 <script lang="ts">
@@ -25,6 +14,14 @@
   }
 </script>
 
-{#if !data.success}
-  <p>Verification failed. Please try again.</p>
-{/if}
+//v0.02
+<main>
+  {#if !data.success}
+    <h1>Verification Failed</h1>
+    <p>Verification failed. Please try again.</p>
+  {:else}
+    <p>Redirecting...</p>
+  {/if}
+</main>
+
+//v0.02
