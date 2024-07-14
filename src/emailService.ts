@@ -1,3 +1,4 @@
+// src/emailService.ts
 
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
@@ -36,4 +37,13 @@ export async function sendEmail(options: EmailOptions) {
     console.error('Error sending email:', error);
     throw new Error('Failed to send email');
   }
+}
+
+// Export sendVerificationEmail function
+export async function sendVerificationEmail(email: string, token: string) {
+  const subject = 'Verify your email address';
+  const html = `<p>Please click <a href="http://example.com/verify/${token}">here</a> to verify your email address.</p>`;
+
+  await sendEmail({ to: email, subject, html });
+  console.log(`Verification email sent to ${email}`);
 }

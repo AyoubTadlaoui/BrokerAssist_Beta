@@ -4,14 +4,12 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   preprocess: vitePreprocess(),
-
   kit: {
     adapter: adapter(),
     alias: {
-      // Example path alias configuration
       $lib: './src/lib',
-      $libpocketbase: './src/lib/pocketbase'
-      // Adjust paths based on your project structure
+      $src: './src', // Add this alias for src directory
+      $libstores: './src/lib/stores'
     }
   }
 };
