@@ -15,6 +15,7 @@
   </nav>
   <slot />
 </main>
+//Basic
 
 <style>
   nav {
